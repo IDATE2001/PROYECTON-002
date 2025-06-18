@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML & CSS foundations – Blog card</title>
+
+  <!-- Google Font → Figtree 500 & 800 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;800&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos (misma carpeta, S mayúscula) -->
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+  <article class="card" aria-labelledby="card-title">
+    <img
+      class="card__banner"
+      src="images/illustration-article.svg"
+      alt="Ilustración abstracta en amarillo y negro"
+      width="336" height="200">
+
+    <div class="card__body">
+      <span class="card__tag">Learning</span>
+      <p class="card__date">Published 21 Dec 2023</p>
+
+      <h1 id="card-title" class="card__title">
+        <a href="#">HTML &amp; CSS foundations</a>
+      </h1>
+
+      <p class="card__excerpt">
+        These languages are the backbone of every website, defining structure, content, and presentation.
+      </p>
+    </div>
+
+    <footer class="card__author">
+      <img
+        src="images/image-avatar.webp"
+        alt="Greg Hooper"
+        class="author__avatar"
+        width="32" height="32">
+      <span class="author__name">Greg Hooper</span>
+    </footer>
+  </article>
+</body>
+</html>

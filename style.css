@@ -1,0 +1,125 @@
+/* -------- Variables (según Style Guide) -------- */
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white:  hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+  --radius: 20px;
+  --shadow-offset: 8px;
+  --font: "Figtree", system-ui, sans-serif;
+}
+
+/* -------- Reset / base -------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;               /* centra robusto */
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--yellow);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img { display: block; max-width: 100%; }
+
+/* -------- Card -------- */
+.card {
+  width: min(100% - 2rem, 384px);  /* 384 px + paddings = mock-up */
+  padding: 24px;                   /* marco blanco interior */
+  background: var(--white);
+  border: 1px solid var(--gray-950);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--gray-950);
+  transition: transform .15s ease-out,
+              box-shadow .15s ease-out;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translate(-4px, -4px);
+  box-shadow: calc(var(--shadow-offset) + 4px)
+              calc(var(--shadow-offset) + 4px)
+              0 0 var(--gray-950);
+}
+
+/* -------- Imagen (esquinas redondeadas + separación) -------- */
+.card__banner {
+  width: 100%;
+  margin-bottom: 24px;                     /* separación con el texto */
+  border-radius: calc(var(--radius) - 4px);/* coincide con mock-up */
+}
+
+/* -------- Contenido principal -------- */
+.card__body { padding: 0; }                /* ya lo aporta la tarjeta */
+
+.card__tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 4px 12px;
+  background: var(--yellow);
+  color: var(--gray-950);
+  font-weight: 800;
+  font-size: .875rem;
+  border-radius: 4px;
+}
+
+.card__date {
+  margin-bottom: 1rem;
+  color: var(--gray-500);
+  font-size: .875rem;
+}
+
+.card__title {
+  margin: 0 0 1rem;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card__title a:hover,
+.card__title a:focus-visible {
+  text-decoration: underline;
+}
+
+.card__excerpt {
+  margin: 0 0 1.5rem;
+  color: var(--gray-500);
+}
+
+/* -------- Autor -------- */
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0;                   /* marco ya lo da el padding de .card */
+}
+
+.author__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.author__name {
+  font-weight: 800;
+  color: var(--gray-950);
+}
+
+/* -------- Ajuste móvil -------- */
+@media (max-width: 420px) {
+  .card { padding: 20px; }      /* se estrecha el marco en pantallas muy pequeñas */
+  .card__banner { margin-bottom: 20px; }
+}
